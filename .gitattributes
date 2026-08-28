@@ -1,0 +1,4 @@
+# The card generator is tooling that lives here for convenience, not what this
+# repository is. Left detectable, it is the only code by byte count and GitHub
+# labels the organisation's defaults repository a Python project.
+brand/build.py linguist-vendored
