@@ -21,7 +21,6 @@ sh -c "$(curl -fsSL https://get.fapost.in/install.sh)"
 | [**install**](https://github.com/fapost-lab/install) | One-command installer — [get.fapost.in](https://get.fapost.in) |
 | [**foundation**](https://github.com/fapost-lab/foundation) | Public contracts and DTOs that Solutions and Plugins build against |
 | [**support**](https://github.com/fapost-lab/support) | Reusable Eloquent primitives, with no dependency on Core |
-| [**website**](https://github.com/fapost-lab/website) | fapost.in |
 
 `foundation` and `support` are deliberately separate and deliberately do not
 depend on Core: anything extending the platform compiles against the contracts,
