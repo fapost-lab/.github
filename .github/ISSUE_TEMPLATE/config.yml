@@ -1,0 +1,16 @@
+# Blank issues stay on: a question that fits no template is still worth asking,
+# and forcing it into one produces a worse issue than a paragraph of prose.
+blank_issues_enabled: true
+
+contact_links:
+  - name: Documentation
+    url: https://docs.fapost.in
+    about: Installation, configuration and troubleshooting — start here.
+
+  - name: Report a security vulnerability
+    url: https://github.com/fapost-lab/core/security/advisories/new
+    about: Privately, so a fix exists before the problem is public. Never as an issue.
+
+  - name: Getting help
+    url: https://github.com/fapost-lab/.github/blob/main/SUPPORT.md
+    about: What to include so a question can actually be answered.

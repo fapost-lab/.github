@@ -1,0 +1,86 @@
+name: Bug report
+description: Something behaves differently from what the documentation says
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time. Please check
+        [existing issues](https://github.com/fapost-lab/core/issues?q=is%3Aissue)
+        first — installation problems in particular are rarely unique.
+
+        **Not for security vulnerabilities.** Those go through the Security tab
+        or security@fapost.in, so a fix exists before the problem is public.
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: What you did, what you got, and what you expected instead.
+      placeholder: |
+        Registered a Telegram channel, sent a message to the bot, nothing arrived
+        in the conversation. I expected the flow to start and reply.
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: How to reproduce
+      description: >
+        The steps someone else can follow on a clean installation. If it only
+        happens with a particular flow, attaching its export helps more than
+        describing it.
+      placeholder: |
+        1. Install with the Docker Compose path
+        2. Add a Telegram channel with …
+        3. Send /start
+        4. Nothing happens
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: >
+        The image tag you are running, or the commit if you built it yourself.
+        `docker compose exec app php artisan about` prints it.
+      placeholder: "v0.2.1, or 6b5f736"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: install-method
+    attributes:
+      label: How it is installed
+      options:
+        - Installer script (get.fapost.in)
+        - Docker Compose, by hand
+        - Docker Compose, images built locally
+        - Bare metal
+        - Development checkout
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs
+      description: >
+        `docker compose logs app --tail 50` and, if the problem involves anything
+        queued, `docker compose logs horizon --tail 50`. **Redact tokens and
+        passwords** — channel logs can contain both. Rendered as a code block, no
+        backticks needed.
+      render: shell
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: >
+        Host OS, Docker and Compose versions, and anything in front of the
+        application — a reverse proxy, a load balancer, a CDN.
+      placeholder: |
+        Ubuntu 24.04, Docker 27.3.1, Compose v2.29.7
+        nginx terminating TLS in front of the web service
